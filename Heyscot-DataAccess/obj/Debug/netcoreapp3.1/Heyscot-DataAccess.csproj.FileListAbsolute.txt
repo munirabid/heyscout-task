@@ -1,0 +1,8 @@
+C:\Users\Admin\source\repos\heyscot-blazor\Heyscot-DataAccess\bin\Debug\netcoreapp3.1\Heyscot-DataAccess.deps.json
+C:\Users\Admin\source\repos\heyscot-blazor\Heyscot-DataAccess\bin\Debug\netcoreapp3.1\Heyscot-DataAccess.dll
+C:\Users\Admin\source\repos\heyscot-blazor\Heyscot-DataAccess\obj\Debug\netcoreapp3.1\Heyscot-DataAccess.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\heyscot-blazor\Heyscot-DataAccess\obj\Debug\netcoreapp3.1\Heyscot-DataAccess.AssemblyInfo.cs
+C:\Users\Admin\source\repos\heyscot-blazor\Heyscot-DataAccess\bin\Debug\netcoreapp3.1\Heyscot-DataAccess.pdb
+C:\Users\Admin\source\repos\heyscot-blazor\Heyscot-DataAccess\obj\Debug\netcoreapp3.1\Heyscot-DataAccess.dll
+C:\Users\Admin\source\repos\heyscot-blazor\Heyscot-DataAccess\obj\Debug\netcoreapp3.1\Heyscot-DataAccess.pdb
+C:\Users\Admin\source\repos\heyscot-blazor\Heyscot-DataAccess\obj\Debug\netcoreapp3.1\Heyscot-DataAccess.csprojAssemblyReference.cache

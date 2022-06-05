@@ -1,0 +1,72 @@
+﻿@page "/fetchmatches"
+@using heyscot_blazor.Data;
+@inject MatchTalentService MatchTalentService
+@using Microsoft.AspNetCore.Mvc.Rendering;
+@using Heyscot_DataAccess.Models;
+<h3>Component</h3>
+
+@if (customerTalents.Customers.Count == 0 && customerTalents.Talents.Count == 0)
+{
+	<p><em>Loading...</em></p>
+}
+else
+{
+	<select @onchange="loadMatchesOnChange">
+		@if (dropDownData != null)
+		{
+			@foreach (var cnt in dropDownData)
+			{
+				<option value="@cnt.Value">@cnt.Text</option>
+			}
+		}
+	</select>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>City</th>
+				<th>Registration Date</th>
+				<th>Type</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var customer in customerTalents.Customers)
+			{
+				<tr>
+					<td>@customer.Name</td>
+					<td>@customer.City</td>
+					<td>@customer.RegistrationDate.ToString("yyyy-MM-dd hh:mm")</td>
+					<td>Customer</td>
+				</tr>
+			}
+			@foreach (var customer in customerTalents.Talents)
+			{
+				<tr>
+					<td>@customer.Name</td>
+					<td>@customer.City</td>
+					<td></td>
+					<td>Talent</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+@code {
+
+	CustomerTalents customerTalents;
+	List<SelectListItem> dropDownData;
+	int selectedValue = 0;
+
+	protected override async Task OnInitializedAsync()
+	{
+		dropDownData = MatchTalentService.GetDropdownData();
+		customerTalents = await MatchTalentService.FetchMatchesAsync(selectedValue);
+	}
+
+	async Task loadMatchesOnChange(ChangeEventArgs e)
+	{
+		selectedValue = int.Parse(e.Value.ToString());
+		customerTalents = await MatchTalentService.FetchMatchesAsync(selectedValue);
+	}
+}
+
